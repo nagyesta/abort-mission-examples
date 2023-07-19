@@ -60,14 +60,16 @@ public class Weather {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof Weather weather)) {
+        if (!(o instanceof Weather)) {
             return false;
         }
-        return temperature == weather.temperature && windSpeed == weather.windSpeed && humidity == weather.humidity && isDay == weather.isDay;
+        Weather weather = (Weather) o;
+        return Double.compare(weather.temperature, temperature) == 0 && Double.compare(weather.windSpeed, windSpeed) == 0 &&
+                humidity == weather.humidity && isDay == weather.isDay && Objects.equals(windDirection, weather.windDirection);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(temperature, windSpeed, humidity, isDay);
+        return Objects.hash(temperature, windSpeed, windDirection, humidity, isDay);
     }
 }

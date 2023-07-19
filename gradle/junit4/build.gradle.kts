@@ -5,6 +5,8 @@ plugins {
 group = "com.github.nagyesta.abort-mission.examples"
 version = "1.0-SNAPSHOT"
 
+java.sourceCompatibility = org.gradle.api.JavaVersion.VERSION_11
+
 repositories {
     mavenCentral()
     maven {
