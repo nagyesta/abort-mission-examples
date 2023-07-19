@@ -1,0 +1,77 @@
+# This workflow will build a Java project with Gradle
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
+
+name: JavaCI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - 'README.md'
+      - '**/README.md'
+      - 'CODE_OF_CONDUCT.md'
+      - 'CONTRIBUTING.md'
+      - 'pull_request_template.md'
+      - '.lift/.toml'
+      - '**/.lift/.toml'
+      - 'SECURITY.md'
+      - 'LICENSE'
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/assets/**'
+      - '.github/workflows/**'
+      - '!.github/workflows/build.yml'
+      - '.github/pr-labeler.yml'
+      - 'renovate.json'
+      - '.whitesource'
+
+permissions: read-all
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        module: [ gradle-junit4, gradle-jupiter, gradle-testng, gradle-cucumber, maven-jupiter ]
+        include:
+          - module: gradle-junit4
+            name: Gradle JUnit 4
+            path: gradle/junit4
+            tool: gradle
+          - module: gradle-jupiter
+            name: Gradle Jupiter
+            path: gradle/jupiter
+            tool: gradle
+          - module: gradle-testng
+            name: Gradle TestNG
+            path: gradle/testng
+            tool: gradle
+          - module: gradle-cucumber
+            name: Gradle Cucumber
+            path: gradle/cucumber
+            tool: gradle
+          - module: maven-jupiter
+            name: Maven Jupiter
+            path: maven/mvn-jupiter
+            tool: maven
+    runs-on: ubuntu-latest
+
+    steps:
+      # Set up build environment
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+        with:
+          fetch-depth: 0
+      - name: Set up JDK 11
+        uses: actions/setup-java@5ffc13f4174014e2d4d4572b3d74c3fa61aeb2c2 # v3.11.0
+        with:
+          distribution: temurin
+          java-version: 11
+      - name: 'Build with Gradle (if Gradle)'
+        uses: gradle/gradle-build-action@40b6781dcdec2762ad36556682ac74e31030cfe2 # v2.5.1
+        if: ${{ matrix.tool == 'gradle' }}
+        with:
+          arguments: build -P apiKey=${{ secrets.WEATHER_COM_API_KEY }}
+          build-root-directory: ${{ matrix.path }}
+      - name: 'Build with Maven (if Maven)'
+        if: ${{ matrix.tool == 'maven' }}
+        run: cd ${{ matrix.path }} && ./mvnw -B clean install -DapiKey=${{ secrets.WEATHER_COM_API_KEY }} || ./mvnw -B abort-mission:flight-eval-report

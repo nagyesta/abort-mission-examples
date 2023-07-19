@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.nagyesta.abort-mission.examples</groupId>
+    <artifactId>mvn-jupiter</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.admlvntv</groupId>
+            <artifactId>WeatherAPIcomLibrary</artifactId>
+            <version>0.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.15.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.15.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.9.3</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Add Booster to integrate Abort-Mission -->
+        <dependency>
+            <groupId>com.github.nagyesta.abort-mission.boosters</groupId>
+            <artifactId>abort.booster-junit-jupiter</artifactId>
+            <version>4.2.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <!-- Set Abort-Mission report directory -->
+                        <abort-mission.report.directory>${project.build.directory}/reports/abort-mission</abort-mission.report.directory>
+                        <API_KEY>${apiKey}</API_KEY>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+            <!-- Add Abort-Mission plugin to be able to generate reports -->
+            <plugin>
+                <groupId>com.github.nagyesta.abort-mission</groupId>
+                <artifactId>abort-mission-maven-plugin</artifactId>
+                <version>2.0.19</version>
+                <executions>
+                    <execution>
+                        <id>generate-report</id>
+                        <goals>
+                            <goal>flight-eval-report</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <inputFile>${project.build.directory}/reports/abort-mission/abort-mission-report.json</inputFile>
+                    <outputFile>${project.build.directory}/reports/abort-mission/abort-mission-report.html</outputFile>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
