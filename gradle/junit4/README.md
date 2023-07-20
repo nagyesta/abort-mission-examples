@@ -8,11 +8,23 @@
 [![wiki](https://img.shields.io/badge/See-Wiki-informational)](https://github.com/nagyesta/abort-mission/wiki)
 
 This folder shows how you can integrate Abort-Mission with your existing project while using JUnit 4.
+Please make sure to read the generic overview in the repository root for more information about the example.
 
 ### Points of interest
 
-- [Gradle configuration](build.gradle.kts)
-- [MissionOutlineDefinition](src/test/java/com/github/nagyesta/abortmission/examples/MissionOutlineDefinition.java)
+- [Gradle configuration](build.gradle.kts) adding the necessary dependencies
+- [MissionOutlineDefinition](src/test/java/com/github/nagyesta/abortmission/examples/MissionOutlineDefinition.java) defining the matchers and how they should abort execution
+- [WeatherRepositoryTest](src/test/java/com/github/nagyesta/abortmission/examples/WeatherRepositoryTest.java) adding the necessary annotation and watcher
+
+### Running this example
+
+```bash
+# Run the tests
+# NOTE: this booster does not support report generation
+./gradlew clean build -P apiKey=none
+```
+
+Once executed, check the number of skipped tests and the logs to see how Abort-Mission worked.
 
 ### More information
 

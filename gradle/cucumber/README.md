@@ -7,13 +7,23 @@
 [![last_commit](https://img.shields.io/github/last-commit/nagyesta/abort-mission-examples?logo=git)](https://img.shields.io/github/last-commit/nagyesta/abort-mission-examples?logo=git)
 [![wiki](https://img.shields.io/badge/See-Wiki-informational)](https://github.com/nagyesta/abort-mission/wiki)
 
-This folder shows how you can integrate Abort-Mission with your existing project while using JUnit Jupiter.
+This folder shows how you can integrate Abort-Mission with your existing project while using Cucumber JVM.
+Please make sure to read the generic overview in the repository root for more information about the example.
 
 ### Points of interest
 
-- [Gradle configuration](build.gradle.kts)
-- [AbortMissionHook](src/test/java/com/github/nagyesta/abortmission/examples/AbortMissionHook.java)
-- TBD
+- [Gradle configuration](build.gradle.kts) adding the necessary dependencies
+- [AbortMissionHook](src/test/java/com/github/nagyesta/abortmission/examples/AbortMissionHook.java) defining the matchers and how they should abort execution
+- [RunTest](src/test/java/com/github/nagyesta/abortmission/examples/RunTest.java) adding the plugin that will save report data
+
+### Running this example
+
+```bash
+# Run the tests and generate the report (even after they failed)
+./gradlew clean build -P apiKey=none
+```
+
+Once executed, check [build/reports/abort-mission/abort-mission-report.html](build/reports/abort-mission/abort-mission-report.html) to see the generated report.
 
 ### More information
 
