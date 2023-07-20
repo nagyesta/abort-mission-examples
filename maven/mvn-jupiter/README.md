@@ -8,11 +8,22 @@
 [![wiki](https://img.shields.io/badge/See-Wiki-informational)](https://github.com/nagyesta/abort-mission/wiki)
 
 This folder shows how you can integrate Abort-Mission with your existing project while using JUnit Jupiter.
+Please make sure to read the generic overview in the repository root for more information about the example.
 
 ### Points of interest
 
-- [Maven configuration](pom.xml)
-- [MissionOutlineDefinition](src/test/java/com/github/nagyesta/abortmission/examples/MissionOutlineDefinition.java)
+- [Maven configuration](pom.xml) adding the necessary dependencies
+- [MissionOutlineDefinition](src/test/java/com/github/nagyesta/abortmission/examples/MissionOutlineDefinition.java) defining the matchers and how they should abort execution
+- [WeatherRepositoryTest](src/test/java/com/github/nagyesta/abortmission/examples/WeatherRepositoryTest.java) adding the necessary annotation
+
+### Running this example
+
+```bash
+# Run the tests and generate the report (even after they failed)
+./mvnw -B clean install -DapiKey=none || ./mvnw -B abort-mission:flight-eval-report
+```
+
+Once executed, check [target/reports/abort-mission/abort-mission-report.html](target/reports/abort-mission/abort-mission-report.html) to see the generated report
 
 ### More information
 

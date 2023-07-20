@@ -14,7 +14,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
-// Add Abort-Mission annotation
+// HINT: Add Abort-Mission annotation
 @LaunchAbortArmed
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class WeatherRepositoryTest {

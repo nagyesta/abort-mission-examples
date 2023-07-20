@@ -13,7 +13,7 @@ import static com.github.nagyesta.abortmission.core.MissionControl.*;
 public class MissionOutlineDefinition extends MissionOutline {
     @Override
     protected Map<String, Consumer<AbortMissionCommandOps>> defineOutline() {
-        // use the default, "shared" namespace by not adding a name
+        // HINT: use the default, "shared" namespace by not adding a name
         return Map.of("", ops -> {
             final CategoryDependencyNameExtractor categoryNames = new CategoryDependencyNameExtractor();
             // Note: More kinds of matchers available.
@@ -25,8 +25,8 @@ public class MissionOutlineDefinition extends MissionOutline {
             ops.registerHealthCheck(percentageBasedEvaluator(
                     matcher().or(endToEnd)
                             .orAtLast(apiKeyMissionDependency).build())
-                    .abortThreshold(1)
-                    .burnInTestCount(1)
+                    .abortThreshold(25) // abort if failure percentage is higher than 25%
+                    .burnInTestCount(1) // execute 1 test before evaluating the threshold
                     .build());
             ops.registerHealthCheck(reportOnlyEvaluator(matcher().anyClass().build()).build());
         });

@@ -5,6 +5,7 @@ Feature: Weather repository provides weather data
     When weather data is requested for London
     Then an exception is received
 
+  # These tags are not required by integration, just one of the many ways we can use to configure matchers
   @EndToEnd
   Scenario: API_KEY_01: Repository can fetch and map temperature data when API key is present
     Given a weather repository is created with API key

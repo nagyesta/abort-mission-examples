@@ -4,10 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.nagyesta.abortmission.booster.junit4.annotation.LaunchAbortArmed;
 import com.github.nagyesta.abortmission.booster.junit4.support.LaunchAbortTestWatcher;
 import com.github.nagyesta.abortmission.core.annotation.MissionDependencies;
-import com.github.nagyesta.abortmission.core.annotation.SuppressLaunchFailureReporting;
 import me.adamcraftmaster.exceptions.JSONGetException;
 import org.junit.Assert;
-import org.junit.AssumptionViolatedException;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
@@ -18,14 +16,13 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
-// Add Abort-Mission annotation
+// HINT: Add Abort-Mission annotation
 @LaunchAbortArmed
-@SuppressLaunchFailureReporting(forExceptions = AssumptionViolatedException.class)
 public class WeatherRepositoryTest {
 
     private final String API_KEY = System.getProperty("API_KEY", "null");
 
-    // Make sure to use the LaunchAbortTestWatcher
+    // HINT: Make sure to use the LaunchAbortTestWatcher
     @Rule
     public TestRule watcher = new LaunchAbortTestWatcher(this.getClass());
 
