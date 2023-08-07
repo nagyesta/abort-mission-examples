@@ -1,6 +1,6 @@
 plugins {
     id("java")
-    id("com.github.nagyesta.abort-mission-gradle-plugin") version "4.1.3"
+    id("com.github.nagyesta.abort-mission-gradle-plugin") version "4.1.11"
 }
 
 group = "com.github.nagyesta.abort-mission.examples"
