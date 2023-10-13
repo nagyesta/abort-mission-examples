@@ -20,7 +20,7 @@ dependencies {
         exclude("com.google.guava", "guava")
     }
     implementation("com.fasterxml.jackson.core:jackson-core:2.15.2")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.15.2")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.15.3")
     testImplementation("org.testng:testng:7.8.0")
     // HINT: Add Booster to integrate Abort-Mission
     testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-testng:4.2.78")
