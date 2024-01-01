@@ -1,12 +1,12 @@
 plugins {
     id("java")
-    id("com.github.nagyesta.abort-mission-gradle-plugin") version "4.1.46"
+    id("com.github.nagyesta.abort-mission-gradle-plugin") version "5.0.0"
 }
 
 group = "com.github.nagyesta.abort-mission.examples"
 version = "1.0-SNAPSHOT"
 
-java.sourceCompatibility = org.gradle.api.JavaVersion.VERSION_11
+java.sourceCompatibility = org.gradle.api.JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
@@ -23,7 +23,7 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.16.1")
     testImplementation("org.testng:testng:7.9.0")
     // HINT: Add Booster to integrate Abort-Mission
-    testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-testng:4.2.122")
+    testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-testng:5.0.0")
 }
 
 // HINT: Configure Abort-Mission plugin
@@ -33,7 +33,7 @@ abortMission {
 
 tasks.test {
     // Define output file
-    outputs.file(file("$buildDir/reports/abort-mission/abort-mission-report.json"))
+    outputs.file(layout.buildDirectory.file("reports/abort-mission/abort-mission-report.json").get().asFile)
     useTestNG()
     // Pass the API key if you have one provided
     systemProperty("API_KEY", project.ext.properties.computeIfAbsent("apiKey") { "-" })

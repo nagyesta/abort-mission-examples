@@ -1,12 +1,12 @@
 plugins {
     id("java")
-    id("com.github.nagyesta.abort-mission-gradle-plugin") version "4.1.46"
+    id("com.github.nagyesta.abort-mission-gradle-plugin") version "5.0.0"
 }
 
 group = "com.github.nagyesta.abort-mission.examples"
 version = "1.0-SNAPSHOT"
 
-java.sourceCompatibility = org.gradle.api.JavaVersion.VERSION_11
+java.sourceCompatibility = org.gradle.api.JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
@@ -25,18 +25,18 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.1")
     testImplementation("org.junit.vintage:junit-vintage-engine:5.10.1")
     // HINT: Add Booster to integrate Abort-Mission
-    testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-cucumber-jvm:4.2.122")
+    testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-cucumber-jvm:5.0.0")
 }
 
 // HINT: Configure Abort-Mission plugin
 abortMission {
-    version = "4.2.0"
+    version = "5.0.0"
     relaxedValidation = true
 }
 
 tasks.test {
     // Define output file
-    outputs.file(file("$buildDir/reports/abort-mission/abort-mission-report.json"))
+    outputs.file(layout.buildDirectory.file("reports/abort-mission/abort-mission-report.json").get().asFile)
     useJUnitPlatform()
     // Pass the API key if you have one provided
     systemProperty("API_KEY", project.ext.properties.computeIfAbsent("apiKey") { "-" })
