@@ -21,7 +21,7 @@ dependencies {
     }
     implementation("com.fasterxml.jackson.core:jackson-core:2.17.1")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.17.1")
-    testImplementation("io.cucumber:cucumber-picocontainer:7.17.0")
+    testImplementation("io.cucumber:cucumber-picocontainer:7.18.0")
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
     testImplementation("org.junit.vintage:junit-vintage-engine:5.10.2")
     // HINT: Add Booster to integrate Abort-Mission
