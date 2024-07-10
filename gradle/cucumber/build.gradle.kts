@@ -20,7 +20,7 @@ dependencies {
         exclude("com.google.guava", "guava")
     }
     implementation("com.fasterxml.jackson.core:jackson-core:2.17.1")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.17.1")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.17.2")
     testImplementation("io.cucumber:cucumber-picocontainer:7.18.0")
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.3")
     testImplementation("org.junit.vintage:junit-vintage-engine:5.10.3")
