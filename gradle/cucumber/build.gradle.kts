@@ -25,7 +25,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.11.0")
     testImplementation("org.junit.vintage:junit-vintage-engine:5.11.0")
     // HINT: Add Booster to integrate Abort-Mission
-    testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-cucumber-jvm:5.0.198")
+    testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-cucumber-jvm:5.0.216")
 }
 
 // HINT: Configure Abort-Mission plugin
