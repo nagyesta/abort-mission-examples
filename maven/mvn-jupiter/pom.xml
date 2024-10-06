@@ -62,7 +62,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.0</version>
+                <version>3.5.1</version>
                 <configuration>
                     <systemPropertyVariables>
                         <!-- HINT: Set Abort-Mission report directory -->
