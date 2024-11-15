@@ -1,6 +1,6 @@
 {
   "extends": [
-    "config:base",
+    "config:recommended",
     ":gitSignOff"
   ],
   "assignees": [
@@ -11,14 +11,14 @@
   "separateMajorMinor": true,
   "separateMinorPatch": true,
   "github-actions": {
-      "pinDigests": true
+    "pinDigests": true
   },
   "packageRules": [
     {
       "groupName": "Abort-Mission dependencies",
-      "matchPackagePrefixes": [
-        "com.github.nagyesta.abort-mission:",
-        "com.github.nagyesta.abort-mission.boosters:"
+      "matchPackageNames": [
+        "com.github.nagyesta.abort-mission:{/,}**",
+        "com.github.nagyesta.abort-mission.boosters:{/,}**"
       ]
     }
   ]
