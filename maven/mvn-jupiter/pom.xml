@@ -53,7 +53,7 @@
         <dependency>
             <groupId>com.github.nagyesta.abort-mission.boosters</groupId>
             <artifactId>abort.booster-junit-jupiter</artifactId>
-            <version>5.0.281</version>
+            <version>5.0.304</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
