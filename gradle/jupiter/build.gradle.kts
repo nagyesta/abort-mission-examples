@@ -21,15 +21,13 @@ dependencies {
     }
     implementation("com.fasterxml.jackson.core:jackson-core:2.18.3")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.18.3")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.11.4")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.12.0")
     // HINT: Add Booster to integrate Abort-Mission
     testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-junit-jupiter:5.1.7")
 }
 
 // HINT: Configure Abort-Mission plugin
-abortMission {
-    version = "5.0.0"
-}
+abortMission {}
 
 tasks.test {
     // Define output file

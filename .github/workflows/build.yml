@@ -31,6 +31,7 @@ permissions: read-all
 jobs:
   build:
     strategy:
+      fail-fast: false
       matrix:
         module: [ gradle-junit4, gradle-jupiter, gradle-testng, gradle-cucumber, maven-jupiter ]
         include:
