@@ -15,6 +15,7 @@
     },
     "packageRules": [
         {
+            "groupName": "Abort-Mission dependencies",
             "matchPackageNames": [
                 "com.github.nagyesta.abort-mission:{/,}**",
                 "com.github.nagyesta.abort-mission.boosters:{/,}**"
@@ -22,6 +23,7 @@
             ]
         },
         {
+            "groupName": "Jupiter dependencies",
             "matchPackageNames": [
                 "org.junit.jupiter:{/,}**",
                 "org.junit.platform:{/,}**",
@@ -29,11 +31,13 @@
             ]
         },
         {
+            "groupName": "Cucumber dependencies",
             "matchPackageNames": [
                 "io.cucumber:{/,}**"
             ]
         },
         {
+            "groupName": "Jackson dependencies",
             "matchPackageNames": [
                 "com.fasterxml.jackson.core:{/,}**"
             ]
