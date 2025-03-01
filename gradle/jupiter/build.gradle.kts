@@ -27,9 +27,7 @@ dependencies {
 }
 
 // HINT: Configure Abort-Mission plugin
-abortMission {
-    version = "5.0.0"
-}
+abortMission {}
 
 tasks.test {
     // Define output file

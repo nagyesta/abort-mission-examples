@@ -1,25 +1,42 @@
 {
-  "extends": [
-    "config:recommended",
-    ":gitSignOff"
-  ],
-  "assignees": [
-    "nagyesta"
-  ],
-  "assigneesSampleSize": 1,
-  "commitMessageSuffix": "{patch}",
-  "separateMajorMinor": true,
-  "separateMinorPatch": true,
-  "github-actions": {
-    "pinDigests": true
-  },
-  "packageRules": [
-    {
-      "groupName": "Abort-Mission dependencies",
-      "matchPackageNames": [
-        "com.github.nagyesta.abort-mission:{/,}**",
-        "com.github.nagyesta.abort-mission.boosters:{/,}**"
-      ]
-    }
-  ]
+    "extends": [
+        "config:recommended",
+        ":gitSignOff"
+    ],
+    "assignees": [
+        "nagyesta"
+    ],
+    "assigneesSampleSize": 1,
+    "commitMessageSuffix": "{patch}",
+    "separateMajorMinor": true,
+    "separateMinorPatch": true,
+    "github-actions": {
+        "pinDigests": true
+    },
+    "packageRules": [
+        {
+            "matchPackageNames": [
+                "com.github.nagyesta.abort-mission:{/,}**",
+                "com.github.nagyesta.abort-mission.boosters:{/,}**"
+
+            ]
+        },
+        {
+            "matchPackageNames": [
+                "org.junit.jupiter:{/,}**",
+                "org.junit.platform:{/,}**",
+                "org.junit.vintage:{/,}**"
+            ]
+        },
+        {
+            "matchPackageNames": [
+                "io.cucumber:{/,}**"
+            ]
+        },
+        {
+            "matchPackageNames": [
+                "com.fasterxml.jackson.core:{/,}**"
+            ]
+        }
+    ]
 }
