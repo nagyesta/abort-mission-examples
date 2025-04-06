@@ -65,7 +65,7 @@
         <dependency>
             <groupId>com.github.nagyesta.abort-mission.boosters</groupId>
             <artifactId>abort.booster-junit-jupiter</artifactId>
-            <version>5.2.0</version>
+            <version>5.2.29</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -87,7 +87,7 @@
             <plugin>
                 <groupId>com.github.nagyesta.abort-mission</groupId>
                 <artifactId>abort-mission-maven-plugin</artifactId>
-                <version>3.1.8</version>
+                <version>3.1.9</version>
                 <executions>
                     <execution>
                         <id>generate-report</id>
