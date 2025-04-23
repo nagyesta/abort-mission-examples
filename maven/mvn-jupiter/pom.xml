@@ -65,7 +65,7 @@
         <dependency>
             <groupId>com.github.nagyesta.abort-mission.boosters</groupId>
             <artifactId>abort.booster-junit-jupiter</artifactId>
-            <version>5.2.29</version>
+            <version>6.0.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

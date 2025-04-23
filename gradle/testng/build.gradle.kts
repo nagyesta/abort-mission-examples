@@ -23,7 +23,7 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.18.3")
     testImplementation("org.testng:testng:7.11.0")
     // HINT: Add Booster to integrate Abort-Mission
-    testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-testng:5.2.29")
+    testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-testng:6.0.0")
 }
 
 // HINT: Configure Abort-Mission plugin
