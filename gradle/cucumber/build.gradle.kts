@@ -22,10 +22,10 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-core:2.19.0")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.19.0")
     testImplementation("io.cucumber:cucumber-picocontainer:7.23.0")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.13.0")
-    testImplementation("org.junit.vintage:junit-vintage-engine:5.13.0")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.13.1")
+    testImplementation("org.junit.vintage:junit-vintage-engine:5.13.1")
     testImplementation("org.junit.platform:junit-platform-engine:1.13.1")
-    testImplementation("org.junit.platform:junit-platform-launcher:1.13.0")
+    testImplementation("org.junit.platform:junit-platform-launcher:1.13.1")
     // HINT: Add Booster to integrate Abort-Mission
     testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-cucumber-jvm:6.0.33")
 }
