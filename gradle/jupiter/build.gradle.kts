@@ -19,8 +19,8 @@ dependencies {
     implementation("com.github.admlvntv:WeatherAPIcomLibrary:0.1.0") {
         exclude("com.google.guava", "guava")
     }
-    implementation("com.fasterxml.jackson.core:jackson-core:2.19.0")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.19.0")
+    implementation("com.fasterxml.jackson.core:jackson-core:2.19.1")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.19.1")
     testImplementation("org.junit.jupiter:junit-jupiter:5.13.1")
     // HINT: Add Booster to integrate Abort-Mission
     testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-junit-jupiter:6.0.33")
