@@ -21,7 +21,7 @@ dependencies {
     }
     implementation("com.fasterxml.jackson.core:jackson-core:2.20.0")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.20.0")
-    testImplementation("io.cucumber:cucumber-picocontainer:7.27.2")
+    testImplementation("io.cucumber:cucumber-picocontainer:7.28.2")
     testImplementation("org.junit.jupiter:junit-jupiter:5.13.4")
     testImplementation("org.junit.vintage:junit-vintage-engine:5.13.4")
     testImplementation("org.junit.platform:junit-platform-engine:1.13.4")
