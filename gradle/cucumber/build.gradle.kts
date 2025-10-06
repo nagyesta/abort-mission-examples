@@ -1,6 +1,6 @@
 plugins {
     id("java")
-    id("com.github.nagyesta.abort-mission-gradle-plugin") version "5.1.40"
+    id("com.github.nagyesta.abort-mission-gradle-plugin") version "5.1.45"
 }
 
 group = "com.github.nagyesta.abort-mission.examples"
@@ -27,7 +27,7 @@ dependencies {
     testImplementation("org.junit.platform:junit-platform-engine:6.0.0")
     testImplementation("org.junit.platform:junit-platform-launcher:6.0.0")
     // HINT: Add Booster to integrate Abort-Mission
-    testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-cucumber-jvm:6.0.140")
+    testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-cucumber-jvm:6.0.150")
 }
 
 // HINT: Configure Abort-Mission plugin
