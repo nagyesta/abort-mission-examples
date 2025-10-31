@@ -19,8 +19,8 @@ dependencies {
     implementation("com.github.admlvntv:WeatherAPIcomLibrary:0.1.0") {
         exclude("com.google.guava", "guava")
     }
-    implementation("com.fasterxml.jackson.core:jackson-core:2.20.0")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.20.0")
+    implementation("com.fasterxml.jackson.core:jackson-core:2.20.1")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.20.1")
     testImplementation("io.cucumber:cucumber-picocontainer:7.31.0")
     testImplementation("org.junit.jupiter:junit-jupiter:6.0.0")
     testImplementation("org.junit.vintage:junit-vintage-engine:6.0.0")
