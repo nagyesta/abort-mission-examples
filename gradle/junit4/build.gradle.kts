@@ -22,7 +22,7 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.20.1")
     testImplementation("junit:junit:4.13.2")
     // HINT: Add Booster to integrate Abort-Mission
-    testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-junit4:6.1.33")
+    testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-junit4:6.2.0")
 }
 
 tasks.test {
