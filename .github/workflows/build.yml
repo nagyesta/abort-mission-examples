@@ -26,7 +26,8 @@ on:
       - 'renovate.json'
       - '.whitesource'
 
-permissions: read-all
+permissions:
+  contents: read
 
 jobs:
   build:
