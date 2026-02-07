@@ -87,7 +87,7 @@
             <plugin>
                 <groupId>com.github.nagyesta.abort-mission</groupId>
                 <artifactId>abort-mission-maven-plugin</artifactId>
-                <version>3.2.18</version>
+                <version>3.2.19</version>
                 <executions>
                     <execution>
                         <id>generate-report</id>
