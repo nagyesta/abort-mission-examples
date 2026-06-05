@@ -23,7 +23,7 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.22.0")
     testImplementation("org.junit.jupiter:junit-jupiter:6.1.0")
     // HINT: Add Booster to integrate Abort-Mission
-    testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-junit-jupiter:7.1.7")
+    testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-junit-jupiter:7.1.23")
 }
 
 // HINT: Configure Abort-Mission plugin
