@@ -1,6 +1,6 @@
 plugins {
     id("java")
-    id("com.github.nagyesta.abort-mission-gradle-plugin") version "5.2.80"
+    id("com.github.nagyesta.abort-mission-gradle-plugin") version "5.2.84"
 }
 
 group = "com.github.nagyesta.abort-mission.examples"
@@ -23,7 +23,7 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.22.2")
     testImplementation("org.testng:testng:7.12.0")
     // HINT: Add Booster to integrate Abort-Mission
-    testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-testng:7.1.80")
+    testImplementation("com.github.nagyesta.abort-mission.boosters:abort.booster-testng:7.1.105")
 }
 
 // HINT: Configure Abort-Mission plugin
